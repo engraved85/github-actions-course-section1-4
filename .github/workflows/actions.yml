@@ -13,6 +13,11 @@ jobs:
         ## ls will show no files as github actions by default won't clone the repo, to do so we need the checkout action
       - name: Checkout
         uses: actions/checkout@v2.3.4 ## this will authinticate and fetch the code
+
+      - name: List files After checkout ## to check the working directory
+        run: |
+          pwd
+          ls -ltrh
   
       - name: Simple JS Actions
         id: greet ## thisis needed to access the output in step2 (log greeting time)
