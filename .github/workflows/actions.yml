@@ -7,10 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List files ## to check the working directory
+      ## $GITHUB_SHA will provide the commit ID
+      ### $GITHUB_REPOSITORY includes the reponame (username/repo)
         run: |
           pwd
           ls -ltrh
+          echo $GITHUB_SHA 
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}""
         ## ls will show no files as github actions by default won't clone the repo, to do so we need the checkout action
+        ## we can do something like git clone git@github:$GITHUB_REPOSITORY >> will have to add the ${{ github.token }} 
+        ## then git checkout $GITHUB_SHA 
+        ## or use the Checkout action as below
       - name: Checkout
         uses: actions/checkout@v2.3.4 ## this will authinticate and fetch the code
 
