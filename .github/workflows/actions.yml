@@ -6,9 +6,7 @@ jobs:
   run-github-actions-example:
     runs-on: ubuntu-latest
     steps:
-      - name: List files ## to check the working directory
-      ## $GITHUB_SHA will provide the commit ID
-      ### $GITHUB_REPOSITORY includes the reponame (username/repo)
+      - name: List files ## to check the working directory,## $GITHUB_SHA will provide the commit ID,      ### $GITHUB_REPOSITORY includes the reponame (username/repo)
         run: |
           pwd
           ls -ltrh
