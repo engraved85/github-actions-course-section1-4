@@ -1,0 +1,41 @@
+## to convert it to JSON we have the convet extension, just ctl + shift + p or view > command
+name: Mustafa
+age: 36
+address: "Milton: ON" # since : is not allowed I had to comment it
+active: true
+inactive: false
+multikey: 
+    key1: value1
+    key2: value2
+    key3: ## another level!
+        key: value
+        key2: value2
+
+## also allows JSON format
+jsonobject: {key1: value1,key2: value2,key3: {key: value,key2: value2}}
+###
+array: ## this also support values or a dictionary (object)
+   - item1
+   - item2
+   - {key: value}
+####
+jsonArray: [item1, item2]
+####
+objectsArray:
+   - {key: value}
+   - key2: value
+   - multiobjkey1A: value
+     multiobjkey1B: value2
+   - multiobjkey2A: value
+     multiobjkey2B: value2
+
+##
+longText: >
+    dhsdhasdgadjadjasdja adjasdjsjsdjsdjsd
+    daskdjasdkasjdlajdlajd a;djsl;aljda
+    asdljasdjasdjlasdjlasjd
+
+longTextPreservelines: |
+    dhsdhasdgadjadjasdja adjasdjsjsdjsdjsd
+    daskdjasdkasjdlajdlajd a;djsl;aljda
+    asdljasdjasdjlasdjlasjd
