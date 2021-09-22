@@ -12,3 +12,8 @@ jobs:
         run: |
            node -v 
            npm -v
+  mustafa-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo n stuff
+        run: echo "There We go!"
