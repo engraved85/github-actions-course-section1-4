@@ -17,3 +17,8 @@ jobs:
     steps:
       - name: echo n stuff
         run: echo "There We go!"
+      - name: python Command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
