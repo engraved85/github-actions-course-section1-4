@@ -1,0 +1,19 @@
+name: Actions Workflow
+
+on: [push]
+
+jobs:
+  run-github-actions-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Actions
+        id: greet ## thisis needed to access the output in step2 (log greeting time)
+        uses: actions/hello-world-javascript-action@v1 #We didn't use run as it is using an exiting action (repo:https://github.com/actions/hello-world-javascript-action branch: master )
+        ## or can be actions/hello-world-javascript-action@master to refrence the master branch instead of a release
+        ## can also be @commit-id
+        with: # this is how to provide inputs to the action, check the rpo for the required inputs
+          who-to-greet: Mustafa
+      - name: log Greeting time using the output of the action # check the repo
+        run: echo "${{ steps.greet.outputs.time }}"
+
+     
