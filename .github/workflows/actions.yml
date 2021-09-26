@@ -38,5 +38,3 @@ jobs:
           who-to-greet: Mustafa
       - name: log Greeting time using the output of the action # check the repo
         run: echo "${{ steps.greet.outputs.time }}"
-
-    
