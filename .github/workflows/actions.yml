@@ -2,8 +2,13 @@ name: Actions Workflow
 
 on: 
   #push:
+  # schedule:
+  #   - cron: "*/5 * * * *"
+  #   - cron: "*/6 * * * *"
   pull_request:
     types: [closed, assigned, opened, reopened]
+  repository_dispatch:
+    types: [mustafa-buildmmm]
 jobs:
   run-github-actions-example:
     runs-on: ubuntu-latest
