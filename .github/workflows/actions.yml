@@ -5,6 +5,24 @@ on:
   # schedule:
   #   - cron: "*/5 * * * *"
   #   - cron: "*/6 * * * *"
+  push: # This means push will only run when we push to master, OR any feature/ branch 
+    branches:
+      - "main"
+      - 'feature/*' # won't match something like feature/a/anything
+      - 'feature/**' # Will match feature/ branch or feature/a/anything
+      - '!feature/featC' ## featC is ignored, MUST BE AFTER THE ALLOW
+    tags: # there is alsow tags ignore
+      - v1.*
+    # paths: ## THis will only match java scripts repos, there is also paths-ignore
+    #   - '**.js'
+    #   - '!filename.js'
+    paths-ignore: ## Ignore any push to the below directory
+      - 'docs/**'
+    #####
+    ##### branches-ignore to ignore branches, but it can't be used if branches: is being used
+    #####
+    # branches-ignore:
+    #  - "main"
   pull_request:
     types: [closed, assigned, opened, reopened]
   repository_dispatch:
